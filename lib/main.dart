@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
       title: '咔哩吧',
       theme: ThemeData(
         primarySwatch: Colors.blue,
-        primaryColor: Color(0xFFff6881)
+        primaryColor: Color(App.color)
       ),
       onGenerateRoute: App.router.generator,
       home: new LaunchPage()
