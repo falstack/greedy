@@ -55,6 +55,7 @@ class _HomepageState extends State<Homepage> {
         onTap: _itemTapped,
         type: BottomNavigationBarType.fixed,
         fixedColor: Theme.of(context).primaryColor,
+        selectedFontSize: 12.0,
       ),
     );
   }

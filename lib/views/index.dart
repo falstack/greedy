@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:fluro/fluro.dart';
 import 'package:greedy/views/home.dart';
 import 'package:greedy/views/login.dart';
+import 'package:greedy/views/webview.dart';
 import 'package:greedy/views/main-note.dart';
 import 'package:greedy/views/main-notice.dart';
 import 'package:greedy/views/main-user.dart';
@@ -21,6 +22,12 @@ class Routes {
     router.define('/home', handler: Handler(
       handlerFunc: (BuildContext context, Map<String, List<String>> params) {
         return Homepage();
+      },
+    ));
+
+    router.define('/webview', handler: Handler(
+      handlerFunc: (BuildContext context, Map<String, List<String>> params) {
+        return Webview();
       },
     ));
 
