@@ -18,9 +18,12 @@ class _LaunchPageState extends State<LaunchPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: new Container(
-        child: new Center(
-          child: new Text("启动界面"),
+      backgroundColor: Colors.white,
+      body: new Center(
+        child: Image.asset(
+          'assets/images/launch.jpeg',
+          fit: BoxFit.cover,
+          width: MediaQuery.of(context).size.width / 1.2
         ),
       ),
     );
