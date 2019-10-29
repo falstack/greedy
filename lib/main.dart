@@ -4,10 +4,10 @@ import 'package:greedy/config/app.dart';
 import 'package:greedy/views/index.dart';
 import 'package:greedy/views/launch.dart';
 
-void main() => runApp(createApp());
+void main() => runApp(MyApp());
 
-class createApp extends StatelessWidget {
-  createApp() {
+class MyApp extends StatelessWidget {
+  MyApp() {
     final router = new Router();
     Routes.configureRoutes(router);
     App.router = router;
