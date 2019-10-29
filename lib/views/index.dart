@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fluro/fluro.dart';
 import 'package:greedy/views/home.dart';
+import 'package:greedy/views/launch.dart';
 import 'package:greedy/views/login.dart';
 import 'package:greedy/views/webview.dart';
 import 'package:greedy/views/main-note.dart';
@@ -13,6 +14,12 @@ import 'package:greedy/views/zone-show.dart';
 
 class Routes {
   static void configureRoutes(Router router) {
+    router.define('/launch', handler: Handler(
+      handlerFunc: (BuildContext context, Map<String, List<String>> params) {
+        return LaunchPage();
+      },
+    ));
+
     router.define('/login', handler: Handler(
       handlerFunc: (BuildContext context, Map<String, List<String>> params) {
         return LoginPage();

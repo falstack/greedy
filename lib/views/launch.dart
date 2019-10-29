@@ -11,7 +11,7 @@ class _LaunchPageState extends State<LaunchPage> {
   @override
   void initState() {
     Future.delayed(Duration(seconds: 2)).then((value) {
-      App.router.navigateTo(context, '/login', transition: TransitionType.native, replace: true, clearStack: true);
+      App.router.navigateTo(context, '/login', transition: TransitionType.fadeIn, replace: true, clearStack: true);
     });
   }
 
