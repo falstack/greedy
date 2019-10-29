@@ -56,7 +56,7 @@ class _MainNoteState extends State<MainNote> {
           child: new Icon(Icons.add),
           backgroundColor: Theme.of(context).primaryColor,
           onPressed: () {
-            App.router.navigateTo(context, '/webview', transition: TransitionType.native);
+            App.router.navigateTo(context, '/webview?title=${Uri.encodeComponent('测试title')}&url=${Uri.encodeComponent('https://www.baidu.com')}', transition: TransitionType.native);
           },
         ),
       ),

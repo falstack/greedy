@@ -27,7 +27,9 @@ class Routes {
 
     router.define('/webview', handler: Handler(
       handlerFunc: (BuildContext context, Map<String, List<String>> params) {
-        return Webview();
+        String title = params['title']?.first;
+        String url = params['url']?.first;
+        return Webview(title: title, url: url);
       },
     ));
 
