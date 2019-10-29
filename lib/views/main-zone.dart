@@ -23,7 +23,7 @@ class _MainZoneState extends State<MainZone> {
         title: Text('分区')
       ),
       body: Center(
-        child: RaisedButton(onPressed: _handleClick, child: Text('$_counter')),
+        child: RaisedButton(onPressed: _handleClick, child: Text('$_counter' + '${_counter.isOdd ? '哈哈' : '呵呵'}')),
       )
     );
   }
