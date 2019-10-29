@@ -8,6 +8,13 @@ class MainZone extends StatefulWidget {
 }
 
 class _MainZoneState extends State<MainZone> {
+  int _counter = 0;
+
+  void _handleClick() {
+    setState(() {
+      _counter++;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -15,6 +22,9 @@ class _MainZoneState extends State<MainZone> {
       appBar: AppBar(
         title: Text('分区')
       ),
+      body: Center(
+        child: RaisedButton(onPressed: _handleClick, child: Text('$_counter')),
+      )
     );
   }
 }
