@@ -12,13 +12,16 @@ class MainNote extends StatefulWidget {
 class _MainNoteState extends State<MainNote> {
   static const tabs = [
     '关注',
-    '推荐',
+    '发现',
+    '动态',
+    '热门',
     '漫友圈'
   ];
 
   @override
   Widget build(BuildContext context) {
     return new DefaultTabController(
+      initialIndex: 1,
       length: tabs.length,
       child: new Scaffold(
         appBar: AppBar(
@@ -53,7 +56,7 @@ class _MainNoteState extends State<MainNote> {
         ),
         floatingActionButton: new FloatingActionButton(
           tooltip: '发帖', // used by assistive technologies
-          child: new Icon(Icons.add),
+          child: new Icon(Icons.palette),
           backgroundColor: Theme.of(context).primaryColor,
           onPressed: () {
             App.router.navigateTo(context, '/webview?title=${Uri.encodeComponent('测试title')}&url=${Uri.encodeComponent('https://www.baidu.com')}', transition: TransitionType.native);
