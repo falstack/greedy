@@ -1,6 +1,6 @@
 import 'package:fluro/fluro.dart';
 import 'package:flutter/material.dart';
-import 'package:greedy/components/NoteItem.dart';
+import 'package:greedy/components/FlowList.dart';
 import 'package:greedy/config/app.dart';
 
 class MainNote extends StatefulWidget {
@@ -38,7 +38,7 @@ class _MainNoteState extends State<MainNote> {
         ),
         body: new TabBarView(
           children: tabs.map((item) {
-            return new NoteItem({});
+            return new FlowList();
           }).toList(),
         ),
         floatingActionButton: new FloatingActionButton(
