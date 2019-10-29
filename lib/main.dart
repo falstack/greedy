@@ -18,8 +18,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: '咔哩吧',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
-        primaryColor: Color(App.color)
+        primaryColor: Colors.white
       ),
       onGenerateRoute: App.router.generator,
       home: new LaunchPage()

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:greedy/config/app.dart';
 import 'package:greedy/views/main-note.dart';
 import 'package:greedy/views/main-notice.dart';
 import 'package:greedy/views/main-user.dart';
@@ -54,7 +55,7 @@ class _HomepageState extends State<Homepage> {
         currentIndex: _currentIndex,
         onTap: _itemTapped,
         type: BottomNavigationBarType.fixed,
-        fixedColor: Theme.of(context).primaryColor,
+        fixedColor: App.color,
         selectedFontSize: 12.0,
       ),
     );

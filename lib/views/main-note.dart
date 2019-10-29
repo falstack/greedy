@@ -28,7 +28,7 @@ class _MainNoteState extends State<MainNote> {
         appBar: AppBar(
           bottom: new TabBar(
             isScrollable: true,
-            indicatorColor: Theme.of(context).primaryColor,
+            indicatorColor: App.color,
             tabs: tabs.map((item) {
               return new Tab(
                   text: item
@@ -44,7 +44,7 @@ class _MainNoteState extends State<MainNote> {
         floatingActionButton: new FloatingActionButton(
           tooltip: '发帖', // used by assistive technologies
           child: new Icon(Icons.palette),
-          backgroundColor: Theme.of(context).primaryColor,
+          backgroundColor: App.color,
           onPressed: () {
             App.router.navigateTo(context, '/webview?title=${Uri.encodeComponent('测试title')}&url=${Uri.encodeComponent('https://www.baidu.com')}', transition: TransitionType.native);
           },

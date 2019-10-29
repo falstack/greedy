@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_webview_plugin/flutter_webview_plugin.dart';
+import 'package:greedy/config/app.dart';
 
 class Webview extends StatefulWidget {
   Webview({Key key, this.url, this.title}) : super(key: key);
@@ -27,7 +28,12 @@ class _WebviewState extends State<Webview> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: new Text(widget.title)
+        iconTheme: IconThemeData(
+          color: App.color,
+        ),
+        title: new Text(widget.title, style: TextStyle(
+          color: App.color,
+        ))
       ),
       body: WebviewScaffold(
         url: widget.url,
