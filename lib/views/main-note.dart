@@ -1,5 +1,6 @@
 import 'package:fluro/fluro.dart';
 import 'package:flutter/material.dart';
+import 'package:greedy/components/NoteItem.dart';
 import 'package:greedy/config/app.dart';
 
 class MainNote extends StatefulWidget {
@@ -37,21 +38,7 @@ class _MainNoteState extends State<MainNote> {
         ),
         body: new TabBarView(
           children: tabs.map((item) {
-            return new Padding(
-                padding: const EdgeInsets.all(16.0),
-                child:  new Card(
-                  color: Colors.white,
-                  child: new Center(
-                    child: new Column(
-                      mainAxisSize: MainAxisSize.min,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: <Widget>[
-                        new Text(item),
-                      ],
-                    ),
-                  ),
-                )
-            );
+            return new NoteItem({});
           }).toList(),
         ),
         floatingActionButton: new FloatingActionButton(
