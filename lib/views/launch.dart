@@ -21,9 +21,9 @@ class _LaunchPageState extends State<LaunchPage> {
       backgroundColor: Colors.white,
       body: new Center(
         child: Image.asset(
-          'assets/images/launch.jpeg',
+          'assets/images/launch.jpg',
           fit: BoxFit.cover,
-          width: MediaQuery.of(context).size.width / 1.2
+          width: MediaQuery.of(context).size.width
         ),
       ),
     );
