@@ -40,7 +40,7 @@ class _ScrollControllerDemoState extends State<ScrollControllerDemo> {
   void initState() {
     dataList.clear();
     for (int i = 0; i < 100; i++) {
-      dataList.add(new _ItemModel(i));
+      dataList.add(_ItemModel(i));
     }
     super.initState();
     _scrollController.addListener(() {
@@ -123,12 +123,12 @@ class _CardItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      child: new Container(
+      child: Container(
         height: data.height,
         alignment: Alignment.centerLeft,
-        child: new Container(
+        child: Container(
           margin: EdgeInsets.all(5),
-          child: new Text("Item ${data.index}"),
+          child: Text("Item ${data.index}"),
         ),
       ),
     );
@@ -137,7 +137,7 @@ class _CardItem extends StatelessWidget {
 
 class _ItemModel {
   ///这个key是关键
-  GlobalKey globalKey = new GlobalKey();
+  GlobalKey globalKey = GlobalKey();
 
   ///可以添加你的代码
   final int index;
