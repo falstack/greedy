@@ -3,6 +3,7 @@ import 'package:fluro/fluro.dart';
 import 'package:greedy/views/demo/border_radius.dart';
 import 'package:greedy/views/demo/controller_scroll.dart';
 import 'package:greedy/views/demo/controller_text_editing.dart';
+import 'package:greedy/views/demo/position_absolute.dart';
 import 'package:greedy/views/demo/refresh_loadmore.dart';
 import 'package:greedy/views/demo/text_line_height.dart';
 import 'package:greedy/views/demo/transform.dart';
@@ -48,6 +49,11 @@ List demoWidgets = <Map>[
     'name': '刷新和加载更多',
     'path': '/demo/refresh-loadmore',
     'handler': RefreshLoadMoreDemo()
+  },
+  {
+    'name': '绝对定位',
+    'path': '/demo/position-absolute',
+    'handler': PositionAbsoluteDemo()
   }
 ];
 
