@@ -3,6 +3,7 @@ import 'package:fluro/fluro.dart';
 import 'package:greedy/views/demo/border_radius.dart';
 import 'package:greedy/views/demo/controller_scroll.dart';
 import 'package:greedy/views/demo/controller_text_editing.dart';
+import 'package:greedy/views/demo/refresh_loadmore.dart';
 import 'package:greedy/views/demo/text_line_height.dart';
 import 'package:greedy/views/demo/transform.dart';
 import 'package:greedy/views/launch.dart';
@@ -42,6 +43,11 @@ List demoWidgets = <Map>[
     'name': '行高',
     'path': '/demo/line-height',
     'handler': TextLineHeightDemo()
+  },
+  {
+    'name': '刷新和加载更多',
+    'path': '/demo/refresh-loadmore',
+    'handler': RefreshLoadMoreDemo()
   }
 ];
 
