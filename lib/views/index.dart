@@ -3,10 +3,11 @@ import 'package:fluro/fluro.dart';
 import 'package:greedy/views/demo/border_radius.dart';
 import 'package:greedy/views/demo/controller_scroll.dart';
 import 'package:greedy/views/demo/controller_text_editing.dart';
+import 'package:greedy/views/demo/text_line_height.dart';
 import 'package:greedy/views/demo/transform.dart';
-import 'package:greedy/views/home.dart';
 import 'package:greedy/views/launch.dart';
 import 'package:greedy/views/login.dart';
+import 'package:greedy/views/home.dart';
 import 'package:greedy/views/webview.dart';
 import 'package:greedy/views/main-note.dart';
 import 'package:greedy/views/main-notice.dart';
@@ -36,6 +37,11 @@ List demoWidgets = <Map>[
     'name': 'Transform',
     'path': '/demo/transform',
     'handler': TransformDemo()
+  },
+  {
+    'name': '行高',
+    'path': '/demo/line-height',
+    'handler': TextLineHeightDemo()
   }
 ];
 
