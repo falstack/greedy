@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fluro/fluro.dart';
 import 'package:greedy/config/app.dart';
-import 'package:greedy/views/index.dart';
+import 'package:greedy/views/index.dart' show Routes;
 import 'package:greedy/views/launch.dart';
 
 void main() => runApp(MyApp());

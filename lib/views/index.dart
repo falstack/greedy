@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fluro/fluro.dart';
+import 'package:greedy/views/demo/controller.dart';
 import 'package:greedy/views/home.dart';
 import 'package:greedy/views/launch.dart';
 import 'package:greedy/views/login.dart';
@@ -11,6 +12,14 @@ import 'package:greedy/views/main-zone.dart';
 import 'package:greedy/views/note-show.dart';
 import 'package:greedy/views/user-show.dart';
 import 'package:greedy/views/zone-show.dart';
+
+List demoWidgets = <Map>[
+  {
+    'name': 'Controller',
+    'path': '/demo/controller',
+    'handler': Controller()
+  }
+];
 
 class Routes {
   static void configureRoutes(Router router) {
@@ -82,5 +91,13 @@ class Routes {
         return ZoneShow();
       },
     ));
+
+    demoWidgets.forEach((demo) {
+      router.define(demo['path'], handler: Handler(
+        handlerFunc: (BuildContext context, Map<String, List<String>> params) {
+          return demo['handler'];
+        },
+      ));
+    });
   }
 }
