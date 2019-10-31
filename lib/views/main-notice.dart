@@ -9,14 +9,14 @@ class MainNotice extends StatefulWidget {
 
 List<Container> _buildGridTileList(int count) {
 
-  return new List<Container>.generate(
+  return List<Container>.generate(
       count,
           (int index) =>
-      new Container(child: new Image.asset('assets/images/pic${index}.jpg')));
+      Container(child: Image.asset('assets/images/pic${index}.jpg')));
 }
 
 Widget _buildGrid() {
-  return new GridView.extent(
+  return GridView.extent(
       maxCrossAxisExtent: 150.0,
       padding: const EdgeInsets.all(4.0),
       mainAxisSpacing: 4.0,
@@ -31,7 +31,7 @@ class _MainNoticeState extends State<MainNotice> {
       appBar: AppBar(
         title: Text('消息')
       ),
-      body: new Center(
+      body: Center(
         child: _buildGrid(),
       ),
     );

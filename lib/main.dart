@@ -8,7 +8,7 @@ void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   MyApp() {
-    final router = new Router();
+    final router = Router();
     Routes.configureRoutes(router);
     App.router = router;
   }
@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
         primaryColor: Colors.white
       ),
       onGenerateRoute: App.router.generator,
-      home: new LaunchPage()
+      home: LaunchPage()
     );
   }
 }

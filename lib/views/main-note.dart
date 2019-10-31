@@ -21,29 +21,29 @@ class _MainNoteState extends State<MainNote> {
 
   @override
   Widget build(BuildContext context) {
-    return new DefaultTabController(
+    return DefaultTabController(
       initialIndex: 1,
       length: tabs.length,
-      child: new Scaffold(
+      child: Scaffold(
         appBar: AppBar(
-          bottom: new TabBar(
+          bottom: TabBar(
             isScrollable: true,
             indicatorColor: App.color,
             tabs: tabs.map((item) {
-              return new Tab(
+              return Tab(
                   text: item
               );
             }).toList(),
           ),
         ),
-        body: new TabBarView(
+        body: TabBarView(
           children: tabs.map((item) {
-            return new FlowList();
+            return FlowList();
           }).toList(),
         ),
-        floatingActionButton: new FloatingActionButton(
+        floatingActionButton: FloatingActionButton(
           tooltip: '发帖', // used by assistive technologies
-          child: new Icon(Icons.palette),
+          child: Icon(Icons.palette),
           backgroundColor: App.color,
           onPressed: () {
             App.router.navigateTo(context, '/webview?title=${Uri.encodeComponent('测试title')}&url=${Uri.encodeComponent('https://www.baidu.com')}', transition: TransitionType.native);

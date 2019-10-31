@@ -15,10 +15,10 @@ class _UserShowState extends State<UserShow> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: new Text('用户详情页')
+        title: Text('用户详情页')
       ),
       body: Center(
-        child: new Text('${widget.slug}'),
+        child: Text('${widget.slug}'),
       ),
     );
   }

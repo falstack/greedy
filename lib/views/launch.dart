@@ -19,7 +19,7 @@ class _LaunchPageState extends State<LaunchPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      body: new Center(
+      body: Center(
         child: Image.asset(
           'assets/images/launch.jpg',
           fit: BoxFit.cover,

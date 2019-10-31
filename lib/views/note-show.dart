@@ -13,7 +13,7 @@ class _NoteShowState extends State<NoteShow> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: new Text('')
+        title: Text('')
       ),
     );
   }

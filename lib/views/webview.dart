@@ -13,7 +13,7 @@ class Webview extends StatefulWidget {
 }
 
 class _WebviewState extends State<Webview> {
-  final flutterWebviewPlugin = new FlutterWebviewPlugin();
+  final flutterWebviewPlugin = FlutterWebviewPlugin();
 
   @override
   void initState() {
@@ -31,7 +31,7 @@ class _WebviewState extends State<Webview> {
         iconTheme: IconThemeData(
           color: App.color,
         ),
-        title: new Text(widget.title, style: TextStyle(
+        title: Text(widget.title, style: TextStyle(
           color: App.color,
         ))
       ),

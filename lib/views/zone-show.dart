@@ -13,7 +13,7 @@ class _ZoneShowState extends State<ZoneShow> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: new Text('')
+        title: Text('')
       ),
     );
   }

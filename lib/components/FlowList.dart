@@ -10,7 +10,7 @@ class FlowList extends StatefulWidget {
 class _FlowListState extends State<FlowList> {
   final List _dataList = List.generate(20, (i) => i);
   bool isPerformingRequest = false;
-  ScrollController _scrollController = new ScrollController();
+  ScrollController _scrollController = ScrollController();
 
   Future<Null> _refresh() async {
     _getMoreData(true);
@@ -35,7 +35,7 @@ class _FlowListState extends State<FlowList> {
       if (offsetFromBottom < edge) {
         _scrollController.animateTo(
             _scrollController.offset - (edge -offsetFromBottom),
-            duration: new Duration(milliseconds: 500),
+            duration: Duration(milliseconds: 500),
             curve: Curves.easeOut);
       }
     }
@@ -72,7 +72,7 @@ class _FlowListState extends State<FlowList> {
               if (index == _dataList.length) {
                 return _buildProgressIndicator(isPerformingRequest);
               }
-              return new Padding(
+              return Padding(
                 padding: EdgeInsets.all(20.0),
                 child: Text('${_dataList[index]}'),
               );
@@ -86,12 +86,12 @@ class _FlowListState extends State<FlowList> {
 }
 
 Widget _buildProgressIndicator(isPerformingRequest) {
-  return new Padding(
+  return Padding(
     padding: const EdgeInsets.all(8.0),
-    child: new Center(
-      child: new Opacity(
+    child: Center(
+      child: Opacity(
         opacity: isPerformingRequest ? 1.0 : 0.0,
-        child: new CircularProgressIndicator(),
+        child: CircularProgressIndicator(),
       ),
     ),
   );
