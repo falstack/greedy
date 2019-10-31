@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:fluro/fluro.dart';
-import 'package:greedy/views/demo/BorderRadiusDemo.dart';
-import 'package:greedy/views/demo/TextEditingControllerDemo.dart';
+import 'package:greedy/views/demo/border_radius.dart';
+import 'package:greedy/views/demo/controller_scroll.dart';
+import 'package:greedy/views/demo/controller_text_editing.dart';
 import 'package:greedy/views/home.dart';
 import 'package:greedy/views/launch.dart';
 import 'package:greedy/views/login.dart';
@@ -16,14 +17,19 @@ import 'package:greedy/views/zone-show.dart';
 
 List demoWidgets = <Map>[
   {
-    'name': 'TextEditingController',
+    'name': '输入框',
     'path': '/demo/text-editing-controller',
     'handler': TextEditingControllerDemo()
   },
   {
-    'name': 'BorderRadiusDemo',
-    'path': '/demo/clip-r-rect',
+    'name': '圆角',
+    'path': '/demo/border-radius',
     'handler': BorderRadiusDemo()
+  },
+  {
+    'name': '滑动监听',
+    'path': '/demo/scroll-controller',
+    'handler': ScrollControllerDemo()
   }
 ];
 
