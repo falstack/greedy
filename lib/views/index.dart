@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fluro/fluro.dart';
-import 'package:greedy/views/demo/controller.dart';
+import 'package:greedy/views/demo/BorderRadiusDemo.dart';
+import 'package:greedy/views/demo/TextEditingControllerDemo.dart';
 import 'package:greedy/views/home.dart';
 import 'package:greedy/views/launch.dart';
 import 'package:greedy/views/login.dart';
@@ -15,9 +16,14 @@ import 'package:greedy/views/zone-show.dart';
 
 List demoWidgets = <Map>[
   {
-    'name': 'Controller',
-    'path': '/demo/controller',
-    'handler': Controller()
+    'name': 'TextEditingController',
+    'path': '/demo/text-editing-controller',
+    'handler': TextEditingControllerDemo()
+  },
+  {
+    'name': 'BorderRadiusDemo',
+    'path': '/demo/clip-r-rect',
+    'handler': BorderRadiusDemo()
   }
 ];
 
