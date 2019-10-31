@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'dart:math' as math;
 
 class ScrollControllerDemo extends StatefulWidget {
   ScrollControllerDemo({Key key}) : super(key: key);
@@ -8,16 +9,39 @@ class ScrollControllerDemo extends StatefulWidget {
 }
 
 class _ScrollControllerDemoState extends State<ScrollControllerDemo> {
+  GlobalKey scrollKey = GlobalKey();
+
   final ScrollController _scrollController = ScrollController();
 
   bool isEnd = false;
+
+  List<_ItemModel> dataList = List();
 
   double offset = 0;
 
   String notify = '';
 
+  _scrollToIndex() {
+    var key = dataList[12];
+
+    ///获取 renderBox
+    RenderBox renderBox = key.globalKey.currentContext.findRenderObject();
+
+    ///获取位置偏移，基于 ancestor: SingleChildScrollView 的 RenderObject()
+    double dy = renderBox.localToGlobal(Offset.zero, ancestor: scrollKey.currentContext.findRenderObject()).dy;
+
+    ///计算真实位移
+    var offset = dy + _scrollController.offset;
+
+    _scrollController.animateTo(offset, duration: Duration(milliseconds: 500), curve: Curves.linear);
+  }
+
   @override
   void initState() {
+    dataList.clear();
+    for (int i = 0; i < 100; i++) {
+      dataList.add(new _ItemModel(i));
+    }
     super.initState();
     _scrollController.addListener(() {
       setState(() {
@@ -51,18 +75,14 @@ class _ScrollControllerDemoState extends State<ScrollControllerDemo> {
             });
             return false;
           },
-          child: ListView.builder(
+          child: SingleChildScrollView(
+            key: scrollKey,
             controller: _scrollController,
-            itemCount: 50,
-            itemBuilder: (context, index) {
-              return Card(
-                child: Container(
-                  height: 60,
-                  alignment: Alignment.centerLeft,
-                  child: Text("Item $index"),
-                ),
-              );
-            },
+            child: Column(
+              children: dataList.map<Widget>((data) {
+                return _CardItem(data, key: dataList[data.index].globalKey);
+              }).toList(),
+            ),
           ),
         ),
       ),
@@ -75,7 +95,9 @@ class _ScrollControllerDemoState extends State<ScrollControllerDemo> {
         ),
         Container(width: 0.3, height: 30.0),
         FlatButton(
-          onPressed: () {},
+          onPressed: () async {
+            _scrollToIndex();
+          },
           child: Text(notify),
         ),
         Visibility(
@@ -89,3 +111,38 @@ class _ScrollControllerDemoState extends State<ScrollControllerDemo> {
     );
   }
 }
+
+class _CardItem extends StatelessWidget {
+
+  final random = math.Random();
+
+  final _ItemModel data;
+
+  _CardItem(this.data, {key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Card(
+      child: new Container(
+        height: data.height,
+        alignment: Alignment.centerLeft,
+        child: new Container(
+          margin: EdgeInsets.all(5),
+          child: new Text("Item ${data.index}"),
+        ),
+      ),
+    );
+  }
+}
+
+class _ItemModel {
+  ///这个key是关键
+  GlobalKey globalKey = new GlobalKey();
+
+  ///可以添加你的代码
+  final int index;
+  final double height = math.max(300 * math.Random().nextDouble(), 50.0);
+
+  _ItemModel(this.index);
+}
+
