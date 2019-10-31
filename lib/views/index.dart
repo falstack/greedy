@@ -3,6 +3,7 @@ import 'package:fluro/fluro.dart';
 import 'package:greedy/views/demo/border_radius.dart';
 import 'package:greedy/views/demo/controller_scroll.dart';
 import 'package:greedy/views/demo/controller_text_editing.dart';
+import 'package:greedy/views/demo/transform.dart';
 import 'package:greedy/views/home.dart';
 import 'package:greedy/views/launch.dart';
 import 'package:greedy/views/login.dart';
@@ -30,6 +31,11 @@ List demoWidgets = <Map>[
     'name': '滑动监听',
     'path': '/demo/scroll-controller',
     'handler': ScrollControllerDemo()
+  },
+  {
+    'name': 'Transform',
+    'path': '/demo/transform',
+    'handler': TransformDemo()
   }
 ];
 

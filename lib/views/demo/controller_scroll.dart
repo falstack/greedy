@@ -145,4 +145,3 @@ class _ItemModel {
 
   _ItemModel(this.index);
 }
-
