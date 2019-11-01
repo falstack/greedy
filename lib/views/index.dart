@@ -3,6 +3,7 @@ import 'package:fluro/fluro.dart';
 import 'package:greedy/views/demo/border_radius.dart';
 import 'package:greedy/views/demo/controller_scroll.dart';
 import 'package:greedy/views/demo/controller_text_editing.dart';
+import 'package:greedy/views/demo/hero_image_preview.dart';
 import 'package:greedy/views/demo/position_absolute.dart';
 import 'package:greedy/views/demo/refresh_loadmore.dart';
 import 'package:greedy/views/demo/tag.dart';
@@ -60,6 +61,11 @@ List demoWidgets = <Map>[
     'name': '标签',
     'path': '/demo/tag',
     'handler': TagDemo()
+  },
+  {
+    'name': '图片预览',
+    'path': '/demo/hero-image-preview',
+    'handler': HeroImagePreviewDemo()
   }
 ];
 
