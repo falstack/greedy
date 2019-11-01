@@ -6,6 +6,7 @@ import 'package:greedy/views/demo/controller_text_editing.dart';
 import 'package:greedy/views/demo/hero_image_preview.dart';
 import 'package:greedy/views/demo/position_absolute.dart';
 import 'package:greedy/views/demo/refresh_loadmore.dart';
+import 'package:greedy/views/demo/status_bar_color.dart';
 import 'package:greedy/views/demo/tag.dart';
 import 'package:greedy/views/demo/text_line_height.dart';
 import 'package:greedy/views/demo/transform.dart';
@@ -66,6 +67,11 @@ List demoWidgets = <Map>[
     'name': '图片预览',
     'path': '/demo/hero-image-preview',
     'handler': HeroImagePreviewDemo()
+  },
+  {
+    'name': '状态栏颜色',
+    'path': '/demo/status-bar-color',
+    'handler': StatusBarColorDemo()
   }
 ];
 
