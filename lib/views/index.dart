@@ -11,6 +11,7 @@ import 'package:greedy/views/demo/refresh_loadmore.dart';
 import 'package:greedy/views/demo/status_bar_color.dart';
 import 'package:greedy/views/demo/tag.dart';
 import 'package:greedy/views/demo/text_line_height.dart';
+import 'package:greedy/views/demo/text_scale.dart';
 import 'package:greedy/views/demo/transform.dart';
 import 'package:greedy/views/launch.dart';
 import 'package:greedy/views/login.dart';
@@ -46,9 +47,14 @@ List demoWidgets = <Map>[
     'handler': TransformDemo()
   },
   {
-    'name': '行高',
-    'path': '/demo/line-height',
+    'name': '文字行高',
+    'path': '/demo/text-line-height',
     'handler': TextLineHeightDemo()
+  },
+  {
+    'name': '文字缩放',
+    'path': '/demo/text-scale',
+    'handler': TextScaleDemo()
   },
   {
     'name': '刷新和加载更多',
