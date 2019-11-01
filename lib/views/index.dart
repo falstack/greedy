@@ -5,6 +5,7 @@ import 'package:greedy/views/demo/controller_scroll.dart';
 import 'package:greedy/views/demo/controller_text_editing.dart';
 import 'package:greedy/views/demo/position_absolute.dart';
 import 'package:greedy/views/demo/refresh_loadmore.dart';
+import 'package:greedy/views/demo/tag.dart';
 import 'package:greedy/views/demo/text_line_height.dart';
 import 'package:greedy/views/demo/transform.dart';
 import 'package:greedy/views/launch.dart';
@@ -54,6 +55,11 @@ List demoWidgets = <Map>[
     'name': '绝对定位',
     'path': '/demo/position-absolute',
     'handler': PositionAbsoluteDemo()
+  },
+  {
+    'name': '标签',
+    'path': '/demo/tag',
+    'handler': TagDemo()
   }
 ];
 
