@@ -3,6 +3,7 @@ import 'package:fluro/fluro.dart';
 import 'package:greedy/views/demo/border_radius.dart';
 import 'package:greedy/views/demo/controller_scroll.dart';
 import 'package:greedy/views/demo/controller_text_editing.dart';
+import 'package:greedy/views/demo/gesture_detector_floating_touch.dart';
 import 'package:greedy/views/demo/hero_image_preview.dart';
 import 'package:greedy/views/demo/keyboard_event.dart';
 import 'package:greedy/views/demo/position_absolute.dart';
@@ -78,6 +79,11 @@ List demoWidgets = <Map>[
     'name': '键盘事件',
     'path': '/demo/keyboard-event',
     'handler': KeyboardEventDemo()
+  },
+  {
+    'name': '悬浮按钮',
+    'path': '/demo/gesture-detector-floating-touch',
+    'handler': GestureDetectorFloatingTouchDemo()
   }
 ];
 
