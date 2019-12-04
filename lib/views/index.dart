@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fluro/fluro.dart';
+import 'package:greedy/views/demo.dart';
 import 'package:greedy/views/demo/border_radius.dart';
 import 'package:greedy/views/demo/controller_scroll.dart';
 import 'package:greedy/views/demo/controller_text_editing.dart';
@@ -110,6 +111,12 @@ class Routes {
     router.define('/home', handler: Handler(
       handlerFunc: (BuildContext context, Map<String, List<String>> params) {
         return Homepage();
+      },
+    ));
+
+    router.define('/demo', handler: Handler(
+      handlerFunc: (BuildContext context, Map<String, List<String>> params) {
+        return DemoPage();
       },
     ));
 

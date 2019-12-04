@@ -19,6 +19,10 @@ class _MainUserState extends State<MainUser> {
     App.router.navigateTo(context, '/launch', transition: TransitionType.fadeIn, replace: true, clearStack: true);
   }
 
+  void _handleToDemo() {
+    App.router.navigateTo(context, '/demo', transition: TransitionType.native);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,7 +32,8 @@ class _MainUserState extends State<MainUser> {
       body: Column(
         children: <Widget>[
           RaisedButton(onPressed: _handleLogout, child: Text('退出登录')),
-          RaisedButton(onPressed: _handleToLaunch, child: Text('去看开屏'))
+          RaisedButton(onPressed: _handleToLaunch, child: Text('去看开屏')),
+          RaisedButton(onPressed: _handleToDemo, child: Text('demo列表'))
         ],
       ),
     );
