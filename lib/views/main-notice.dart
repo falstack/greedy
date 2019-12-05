@@ -8,18 +8,37 @@ class MainNotice extends StatefulWidget {
   _MainNoticeState createState() => _MainNoticeState();
 }
 
-class _MainNoticeState extends State<MainNotice> {
+class _MainNoticeState extends State<MainNotice> with TickerProviderStateMixin {
   final List<ChatMessage> _messages = <ChatMessage>[];
   final TextEditingController _textController = new TextEditingController();
+  bool _isComposing = false;
 
   void _handleSubmitted(String text) {
     _textController.clear();
+    if (text == '') {
+      return;
+    }
+    setState(() {
+      _isComposing = false;
+    });
     ChatMessage message = new ChatMessage(
       text: text,
+      animationController: new AnimationController(
+        duration: new Duration(milliseconds: 700),
+        vsync: this,
+      ),
     );
     setState(() {
       _messages.insert(0, message);
     });
+    message.animationController.forward();
+  }
+
+  @override
+  void dispose() {
+    for (ChatMessage message in _messages)
+      message.animationController.dispose();
+    super.dispose();
   }
 
   Widget _buildTextComposer() {
@@ -31,6 +50,11 @@ class _MainNoticeState extends State<MainNotice> {
             child: TextField(
               controller: _textController,
               onSubmitted: _handleSubmitted,
+              onChanged: (String text) {
+                setState(() {
+                  _isComposing = text.length > 0;
+                });
+              },
               decoration: InputDecoration.collapsed(
                 hintText: "Send a message"
               ),
@@ -40,7 +64,7 @@ class _MainNoticeState extends State<MainNotice> {
             margin: EdgeInsets.symmetric(horizontal: 4.0),
             child: IconButton(
               icon: Icon(Icons.send),
-              onPressed: () => _handleSubmitted(_textController.text)
+              onPressed: _isComposing ? () => _handleSubmitted(_textController.text) : null
             ),
           ),
         ],
