@@ -1,6 +1,7 @@
 import 'package:fluro/fluro.dart';
 import 'package:flutter/material.dart';
 import 'package:greedy/config/app.dart';
+import 'package:greedy/api/api.dart' show Api;
 
 class LoginPage extends StatefulWidget {
   @override
@@ -48,9 +49,11 @@ class _LoginPageState extends State<LoginPage> with SingleTickerProviderStateMix
   doLogin() {
     print("doLogin");
     _signInFormKey.currentState.save();
-//    setState(() {
-//      isLoading = true;
-//    });
+    setState(() {
+      isLoading = true;
+    });
+    var api = new Api();
+    var user = api.accessLogin(username, password);
   }
 
   @override
@@ -160,11 +163,8 @@ class _LoginPageState extends State<LoginPage> with SingleTickerProviderStateMix
               child: Text("LOGIN"),
             ),
             onTap: () {
-              print('?????');
               if (_signInFormKey.currentState.validate()) {
                 doLogin();
-              } else {
-                print("form validate failed");
               }
             },
           ),
