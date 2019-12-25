@@ -6,21 +6,29 @@ BaseOptions options = new BaseOptions(
   receiveTimeout: 3000,
 );
 
-Dio dio = new Dio(options);
-
-dio.interceptors.add(
-  InterceptorsWrapper(
-    onRequest: (RequestOptions options) {
-      return options;
-    },
-    onResponse: (Response response) {
-      return response;
-    },
-    onError: (DioError e) {
-      return  e;
-    }
-  )
-);
+Dio dio = new Dio(options)
+  ..interceptors.add(
+    InterceptorsWrapper(
+      onRequest: (RequestOptions options) {
+        if (options.data is Map) {
+          options.data = options.data.map((key, value){
+            if (value is String) {
+              return MapEntry(key, value.trim());
+            }
+            return MapEntry(key, value);
+          });
+        }
+        print(options.headers);
+        return options;
+      },
+      onResponse: (Response response) {
+        return response;
+      },
+      onError: (DioError e) {
+        return  e;
+      }
+    )
+  );
 
 class Api {
   accessLogin(String username, String password) async {
@@ -32,15 +40,9 @@ class Api {
           "secret": password
         }
       );
-      print(response);
       return response;
     } catch (e) {
-      print('error handle');
-      print(e.response.data);
-      print(e.response.headers);
-      print(e.response.request);
-      print(e.request);
-      print(e.message);
+      return e;
     }
   }
 }
