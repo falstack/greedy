@@ -31,18 +31,13 @@ Dio dio = new Dio(options)
   );
 
 class Api {
-  accessLogin(String username, String password) async {
-    try {
-      Response response = await dio.post(
+  static Future accessLogin(String username, String password) async {
+    return await dio.post(
         "v1/door/login",
         data: {
           "access": username,
           "secret": password
         }
-      );
-      return response;
-    } catch (e) {
-      return e;
-    }
+    );
   }
 }

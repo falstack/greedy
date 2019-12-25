@@ -1,7 +1,6 @@
-import 'package:fluro/fluro.dart';
 import 'package:flutter/material.dart';
 import 'package:greedy/config/app.dart';
-import 'package:greedy/api/api.dart' show Api;
+import 'package:greedy/api/api.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -52,8 +51,13 @@ class _LoginPageState extends State<LoginPage> with SingleTickerProviderStateMix
     setState(() {
       isLoading = true;
     });
-    var api = new Api();
-    var user = api.accessLogin(username, password);
+    try {
+      Api.accessLogin(username, password).then((data) {
+        print(data);
+      });
+    } catch (e) {
+      print(e);
+    }
   }
 
   @override
@@ -157,21 +161,13 @@ class _LoginPageState extends State<LoginPage> with SingleTickerProviderStateMix
               ],
             ),
           ),
-          GestureDetector(
-            child: Container(
-              padding: EdgeInsets.only(left: 42, right: 42, top: 10, bottom: 10),
-              child: Text("LOGIN"),
-            ),
-            onTap: () {
+          RaisedButton(
+            child: Text("登录"),
+            onPressed: () {
               if (_signInFormKey.currentState.validate()) {
                 doLogin();
               }
-            },
-          ),
-          RaisedButton(
-            child: Text("点击登录成功，跳转到主页"),
-            onPressed: () {
-              App.router.navigateTo(context, '/home', transition: TransitionType.fadeIn, replace: true, clearStack: true);
+              // App.router.navigateTo(context, '/home', transition: TransitionType.fadeIn, replace: true, clearStack: true);
             },
           )
         ],
